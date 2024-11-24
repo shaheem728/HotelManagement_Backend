@@ -1,0 +1,90 @@
+/* styles/dashboard.module.css */
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2d3436;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebarHeader {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.navLinks {
+    list-style-type: none;
+    padding: 0;
+}
+
+.navLinks li {
+    margin: 20px 0;
+}
+
+.navLinks li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navLinks li a:hover {
+    text-decoration: underline;
+}
+
+.mainContent {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #dfe6e9;
+}
+
+.profile {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* h1 {
+    margin: 0;
+} */
+
+/* Styling for the chart container */
+.chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Stats box styles */
+.stats {
+    display: flex;
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: #ffeaa7;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.stat-box p {
+    font-size: 24px;
+    font-weight: bold;
+}
