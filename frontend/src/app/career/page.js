@@ -1,25 +1,31 @@
-export default function page(){
-    return (
-        <div>
+import React from 'react'
+
+const Contact = () => {
+  return (
+    <div>
     
 
     <div className="container my-2">
-        <h1 className="text-center">Contact Us</h1>
+        <h1 className="text-center">Work With Us</h1>
         <p className="text-center mb-4">Have questions? We'd love to hear from you!</p>
 
         <div className="row">
             <div className="col-md-6">
                 <form>
                     <div className="mb-3">
-                        <label htmlFor="name" className="form-label">Name</label>
+                        <label for="name" className="form-label">Name</label>
                         <input type="text" className="form-control" id="name" placeholder="Your Name"/>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="email" className="form-label">Email address</label>
+                        <label for="email" className="form-label">Email address</label>
                         <input type="email" className="form-control" id="email" placeholder="name@example.com"/>
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="message" className="form-label">Message</label>
+                        <label for="file" className="form-label">Updated CV</label>
+                        <input type="file" className="form-control" id="file"/>
+                    </div>
+                    <div className="mb-3">
+                        <label for="message" className="form-label">Message</label>
                         <textarea className="form-control" id="message" rows="5" placeholder="Your Message"></textarea>
                     </div>
                     <button type="submit" className="btn btn-primary">Submit</button>
@@ -48,5 +54,7 @@ export default function page(){
 
  
     </div>
-    )
+  )
 }
+
+export default Contact

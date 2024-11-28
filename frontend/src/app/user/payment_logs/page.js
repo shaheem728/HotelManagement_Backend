@@ -4,14 +4,14 @@ import DashBoardSaideBar from '@/components/user/DashBoardSideBar'
 
 export default function page(){
     return (
-        <section className="container my-5" style={{'minHeight':'100vh'}}>
+        <section className="container my-5" style={{'minHeight':'50vh'}}>
             <div className="row">
                 <div className="col-md-4 col-12">
                   <DashBoardSaideBar/>
                 </div>
              <div className='col-md-8 col-12'>
 
-             <table className='table table-bordered table-hover'>
+             <table className='table table-bordered table-hover shadow-lg p-3 m-auto my-4 bg-body-tertiary rounded'>
                 <thead>
                     <tr>
                     <th>Payment Date</th>

@@ -24,11 +24,9 @@ export default function page(){
                   <DashBoardSaideBar/>
                 </div>
              <div className='col-md-8 col-12'>
-            <div className="card my-1">
+            <div className="card my-1   shadow-lg p-3 m-auto my-4 bg-body-tertiary rounded">
                 <h5 className='card-header'>Update Profile</h5>
-                <div className="col-md-4 col-lg-3">
-                    <img src="/thump/image-placeholder-500x500.jpg" width={200} className="image-fluid"/>
-               </div>
+               
                 <form onSubmit={handleSubmit}>
                 
                 <div className="mb-3">

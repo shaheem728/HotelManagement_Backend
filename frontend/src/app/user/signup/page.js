@@ -22,15 +22,13 @@ export default function page() {
 
     return (
         <div className="container">
-            <h2>Sign Up</h2>
-            <div className="row">
-                <div className="col-md-6">
-                    <img src="/thump/image-placeholder-500x500.jpg" width={250} className="image-fluid"/>
-                </div>
-                <div className="col-md-6">
-            <div className='w-25  h-50 shadow-none p-3 mb-5  rounded bg-info'> 
+            <div className="row w-75 d-flex justify-content-center shadow-lg  m-auto my-4 py-4 bg-body-tertiary rounded">
+            <h1 >Sign Up</h1>
+               
+           
             <form onSubmit={handleSubmit}>
-
+            <div className="row">
+                <div className="col">
                 <div className="mb-3">
                     <label for="userName" className="form-label">User Name</label>
                     <input className="form-control" type="text" id="userName" placeholder="Enter UserName"value={userName}onChange={(e) => setUserName(e.target.value)}required />
@@ -39,16 +37,19 @@ export default function page() {
                     <label for="mobile" className="form-label">Mobile</label>
                     <input className="form-control" type="del" id="mobile" placeholder="Enter Mobile Number"value={mobile}onChange={(e) => setMobileNumber(e.target.value)}required />
                 </div>
+                </div>
+                <div className="col">
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Email address</label>
                     <input className="form-control" type="email" id="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Password</label>
                     <input className="form-control" type="password"  id="password" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
                 </div>
-                <div className="mb-3 form-check">
+                </div>
+                </div>
+                <div className=" form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                     <label className="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
@@ -57,8 +58,8 @@ export default function page() {
                 <p>if you already registered user<Link href={'/user/login'}>Login here</Link></p>
             </form>
             </div>
+            
             </div>
-            </div>
-        </div>
+       
     )
 }

@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation"
 export default function page(){
     const pathname = usePathname()
     return (
-        <div className="list-group">
+        <div className="list-group shadow-lg p-3 m-auto  bg-body-tertiary rounded">
         <Link className={`list-group-item ${pathname == '/user/dashboard' ?'bg-color-dark':''} `} href={'/user/dashboard'}>DashBoard</Link>
         <Link className={`list-group-item ${pathname == '/user/booking_history' ?'bg-color-dark':''} `}href="/user/booking_history">Booking History</Link>
         <Link className={`list-group-item ${pathname == '/user/event_booking_history' ?'bg-color-dark':''} `}href="/user/event_booking_history">Event Booking History</Link>

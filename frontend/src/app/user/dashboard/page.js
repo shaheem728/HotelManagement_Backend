@@ -11,6 +11,7 @@ export default function dashboard(){
                 </div>
                 <div className="col-md-8 col-12">
                    <div className="row">
+                   <h1>Dashboard</h1>
                     <div className="col-6 text-center">
                         <div className="card">
                                 <h5 className="card-header">Total Booking</h5>

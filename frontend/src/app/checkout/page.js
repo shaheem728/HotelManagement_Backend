@@ -52,7 +52,7 @@ export default function checkout(){
                         <tr>
                         <td colSpan={2}>
                             <button className="btn btn-danger">Cancel</button>
-                            <button className="btn bg-color-dark ms-2">Pay Now</button>
+                            <Link href='/payment/success' className="btn bg-color-dark ms-2">Pay Now</Link>
                         </td>
                         </tr>
                        

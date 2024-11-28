@@ -22,10 +22,10 @@ export default function page() {
 
     return (
         <div className="container">
-            <h2>Login</h2>
-            <div className='w-25  h-50 shadow-none p-3 mb-5  rounded bg-info'> 
+            
+            <div className='w-25  h-50  shadow-lg p-3 m-auto my-4 bg-body-tertiary rounded'> 
             <form onSubmit={handleSubmit}>
-
+            <h2>Login</h2>
                 <div className="mb-3">
                     <label for="userName" className="form-label">User Name</label>
                     <input className="form-control" type="text" id="userName" placeholder="Enter UserName"value={userName}onChange={(e) => setUserName(e.target.value)}required />
@@ -40,6 +40,7 @@ export default function page() {
                 </div>
                 <button type="reset" className="btn btn-primary">Reset</button>
                 <button type="submit" className="btn bg-color-dark ms-1">Submit</button>
+                <p>Forget Password ?<Link href={'/user/forgetpassword'}>Forget Password</Link></p>
                 <p>if you are not registered user<Link href={'/user/signup'}>SignUp here</Link></p>
             </form>
             </div>

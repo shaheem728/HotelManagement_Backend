@@ -11,7 +11,7 @@ export default function page(){
                 </div>
              <div className='col-md-8 col-12'>
 
-             <table className='table table-bordered table-hover'>
+             <table className='table table-bordered table-hover shadow-lg p-3 m-auto  bg-body-tertiary rounded'>
                 <thead>
                     <tr>
                     <th>Booking Date</th>
