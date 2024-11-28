@@ -1,15 +1,13 @@
 
 import Link from 'next/link'
-import { Inter } from 'next/font/google'
- 
-const inter = Inter({ subsets: ['latin'] })
+
  
 export default function Header(){
     return (
 
         <nav className="navbar navbar-expand-lg bg-color-normal ">
   <div className="container-fluid">
-    <a className={`navbar-brand ${inter.className} heading-color`} href="#">hms</a>
+    <a className='navbar-brand  heading-color' href="#">Royal</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
