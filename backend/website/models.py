@@ -21,14 +21,15 @@ class Contact(models.Model):
     add_time = models.DateTimeField(auto_now_add=True)
 
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)    
-    profile_picture = models.ImageField(upload_to='profile_picture/',null=True)
-    mobile = models.CharField(null=True,unique=True)
-
+    user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')    
+    mobile = models.CharField(max_length=15,null=True,unique=True) 
     @receiver(post_save, sender=User)
-    def create_user_profile(sender,instance ,created,**kwargs):
-        if created:
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created and not hasattr(instance, 'profile'):  # Prevent overriding existing profile
             Profile.objects.create(user=instance)
+
+    def __str__(self):
+      return f'{self.user}\n{self.mobile}\n{self.user.id}'
         
 class Career(models.Model):
     full_name = models.CharField(max_length=200,null=True)  

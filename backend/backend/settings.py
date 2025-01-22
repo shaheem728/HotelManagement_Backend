@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'website',
     'rest_framework',
     'corsheaders',
-     'rest_framework.authtoken'
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -137,13 +137,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Path to store media files
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  
+    'http://localhost:3000',
 ]
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+     'PAGE_SIZE': 3,
      'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',  # Add this line
     ],
-    'PAGE_SIZE': 2
+    
 }

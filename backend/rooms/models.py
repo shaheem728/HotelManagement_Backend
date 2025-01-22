@@ -7,6 +7,9 @@ class RoomType(models.Model):
     title = models.CharField(max_length=255)
     detail = models.JSONField(null=True)
     per_day_charges = models.PositiveIntegerField(default=0)
+    
+    class Meta:
+        ordering = ['title']  # Specify the default ordering here
 
     def __str__(self):
         return self.title
@@ -22,8 +25,8 @@ class Booking(models.Model):
     room_no= models.ForeignKey(Room, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     booking_date = models.DateTimeField(auto_now_add=True)
-    total_quest = models.IntegerField()
-    checking_date=models.DateField()
+    total_guest = models.IntegerField()
+    checkin_date=models.DateField()
     checkout_date=models.DateField()
     booking_amount=models.DecimalField(max_digits=10,decimal_places=2)
     booking_detail=models.JSONField(null=True,blank=True)
@@ -37,15 +40,13 @@ class Booking(models.Model):
   
 
 class Invoice(models.Model):
-    booking= models.ForeignKey(Booking, on_delete=models.CASCADE,related_name='booking_invoice')
-    uuid=models.UUIDField(default=uuid.uuid4,editable=False,unique=True)
-    invoice_number=models.CharField(max_length=100)
-    payment_status= models.CharField(max_length=100,default='pending')
-    
-    def __str__(self):
-        return self.invoice_number
-    
+    booking = models.OneToOneField('Booking', on_delete=models.CASCADE, related_name='invoice')
+    invoice_date = models.DateTimeField(auto_now_add=True)
+    amount = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)  # Set default here
+    status = models.CharField(max_length=50, default='unpaid')
 
+    def __str__(self):
+        return f'Invoice-{self.id} for Booking-{self.booking.id}'
     
 class Payment(models.Model):
     booking = models.ForeignKey(Booking,on_delete=models.CASCADE)
@@ -54,7 +55,7 @@ class Payment(models.Model):
     response_data=models.TextField()
     payment_date=models.DateTimeField(auto_now_add=True)        
 class Gallery(models.Model):
-    image = models.ImageField(upload_to='gallery_image')   
+    image = models.ImageField(upload_to='gallery_image/')   
 
 class RoomImage(models.Model):
     room_type = models.ForeignKey(RoomType,on_delete=models.CASCADE,null=True,related_name='room_type_image') 
